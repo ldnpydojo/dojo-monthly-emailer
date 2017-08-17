@@ -1,0 +1,14 @@
+sudo: false
+language: python
+python:
+  - "2.7"
+  - "3.6"
+
+install:
+  - pip install tox coveralls codecov pytest-travis-fold
+  - "TOX_ENV=${TRAVIS_PYTHON_VERSION/[0-9].[0-9]/py${TRAVIS_PYTHON_VERSION/.}}"
+script: tox -e $TOX_ENV,lint
+
+after_success:
+  - coveralls
+  - codecov

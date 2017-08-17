@@ -1,0 +1,5 @@
+TODO
+
+update badges to ref ldnpydojo
+endpoint should require a POST to send the email, we can then change this zappa setting to true
+"touch": false, // GET the production URL upon initial deployment (default True)
