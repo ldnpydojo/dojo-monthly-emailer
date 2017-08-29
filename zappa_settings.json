@@ -1,0 +1,17 @@
+// comments make this file invalid json
+// if zappa ever barfs, you may have to remove 'em!
+{
+    "dev": {
+        "profile_name": "default", // relating to aws creds
+        "app_function": "dojo_emailer.app.app",
+        "s3_bucket": "zappa-upload-bucket-unique-123", // zappa empties this but doesn't delete it
+        "apigateway_enabled": true, // external access purely for manual testing
+        "aws_region": "eu-west-1", // put everything in Ireland as not all services are present in London
+        "touch": false, // do not GET the production URL upon initial deployment, as that would trigger an email. see TODO file
+        "extra_permissions": [{
+            "Action": "ses:SendEmail",
+            "Effect": "Allow",
+            "Resource": "*"
+        }] // without this, our function can't send the email
+    }
+}

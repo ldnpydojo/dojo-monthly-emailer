@@ -1,0 +1,9 @@
+include *.json
+include *.md
+include *.py
+include *.txt
+include LICENSE
+include *.ini
+include .coveragerc
+recursive-include dojo_emailer *.html
+recursive-include tests *.py

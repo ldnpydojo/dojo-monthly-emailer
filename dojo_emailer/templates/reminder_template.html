@@ -1,0 +1,49 @@
+<p>Hi cat herders,</p>
+
+<p>here&#39;s a gentle reminder to begin organising the upcoming dojo.</p>
+
+<p>Mini checklist:</p>
+
+<ul>
+<li>O&#39;Reilly book?</li>
+<li>Picked cat herder?</li>
+<li>Venue confirmed?</li>
+<li>Create invite</li>
+<li>Send Python UK email</li>
+<li>Tweet!</li>
+</ul>
+
+<p><a href="{{ spreadsheet_url }}" target="_blank">Spreadsheet</a> data:</p>
+
+<ul>
+{% for key, value in next_dojo_data.items() %}
+    {% if key or value %}
+        <li><b>{{ key }}</b>: {{ value }}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+
+<p>Resources:</p>
+
+<ul>
+    <li><a href="{{ spreadsheet_url }}" target="_blank">spreadsheet</a></li>
+    <li>
+        {# we read doc_url from the spreadsheet, which is a bit fragile, so don't barf if missing #}
+        {% if doc_url %}
+            <a href="{{ doc_url }}" target="_blank">checklist doc</a>
+        {% else %}
+            checklist doc
+        {% endif %}
+    </li>
+    <li><a href="https://www.eventbrite.co.uk/" target="_blank">eventbrite</a></li>
+    <li>twitter <a href="https://twitter.com/ldnpydojo" target="_blank">@ldnpydojo</a></li>
+</ul>
+
+<p></p>
+
+<p>Peace y&#39;all,<br>
+Dojo monthly emailer<br>
+(<a href="https://github.com/ldnpydojo/dojo-monthly-emailer" target="_blank">source</a>)
+</p>
+
+<p><img align="center" border="0" src="https://raw.githubusercontent.com/ldnpydojo/LondonPythonCodeDojo/master/Logo-small.png" width="150"></p>
