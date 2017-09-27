@@ -2,8 +2,6 @@ import os
 
 from pynt import task
 
-from dojo_emailer.app import app
-
 
 @task()
 def clean():
@@ -21,4 +19,5 @@ def isort():
 @task()
 def devserver():
     '''Start server locally, in debug mode.'''
+    from dojo_emailer.app import app
     app.run(debug=True)
